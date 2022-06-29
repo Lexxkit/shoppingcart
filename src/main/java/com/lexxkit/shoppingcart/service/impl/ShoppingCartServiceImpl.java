@@ -4,6 +4,7 @@ import com.lexxkit.shoppingcart.data.Cart;
 import com.lexxkit.shoppingcart.service.ShoppingCartService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -16,13 +17,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public String getCart() {
-        return cart.getShoppingCart();
+    public List<Integer> getCart() {
+        return Collections.unmodifiableList(cart.getShoppingCart());
     }
 
     @Override
     public String addToCart(List<Integer> itemsId) {
-        cart.setShoppingCart(itemsId + "was added.");
-        return cart.getShoppingCart();
+        itemsId.forEach(cart::addToCart);
+        return itemsId + " was added to cart.";
     }
 }

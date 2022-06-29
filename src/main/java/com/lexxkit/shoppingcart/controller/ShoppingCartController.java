@@ -20,7 +20,7 @@ public class ShoppingCartController {
 
     @GetMapping(path = "/get")
     public String getCart() {
-        return shoppingCartService.getCart();
+        return shoppingCartService.getCart().toString();
     }
 
     @GetMapping(path = "/add")
