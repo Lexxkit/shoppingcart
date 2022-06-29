@@ -21,5 +21,4 @@ public class Cart {
     public void addToCart(int item) {
         shoppingCart.add(item);
     }
-
 }

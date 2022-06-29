@@ -19,8 +19,8 @@ public class ShoppingCartController {
     }
 
     @GetMapping(path = "/get")
-    public String getCart() {
-        return shoppingCartService.getCart().toString();
+    public List<Integer> getCart() {
+        return shoppingCartService.getCart();
     }
 
     @GetMapping(path = "/add")
