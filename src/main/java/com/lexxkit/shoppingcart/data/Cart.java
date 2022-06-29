@@ -1,10 +1,10 @@
 package com.lexxkit.shoppingcart.data;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Component
-@Scope(scopeName = "prototype")
+@SessionScope
 public class Cart {
     private String shoppingCart;
 
