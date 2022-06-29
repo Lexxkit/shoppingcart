@@ -1,8 +1,10 @@
 package com.lexxkit.shoppingcart.service;
 
+import java.util.List;
+
 public interface ShoppingCartService {
 
     String getCart();
 
-    String addToCart(Integer id);
+    String addToCart(List<Integer> itemsId);
 }

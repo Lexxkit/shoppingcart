@@ -4,6 +4,8 @@ import com.lexxkit.shoppingcart.data.Cart;
 import com.lexxkit.shoppingcart.service.ShoppingCartService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
@@ -19,8 +21,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public String addToCart(Integer id) {
-        cart.setShoppingCart(id + "was added.");
+    public String addToCart(List<Integer> itemsId) {
+        cart.setShoppingCart(itemsId + "was added.");
         return cart.getShoppingCart();
     }
 }

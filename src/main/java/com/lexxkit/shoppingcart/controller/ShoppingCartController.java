@@ -3,7 +3,10 @@ package com.lexxkit.shoppingcart.controller;
 import com.lexxkit.shoppingcart.service.ShoppingCartService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/order")
@@ -21,7 +24,7 @@ public class ShoppingCartController {
     }
 
     @GetMapping(path = "/add")
-    public String addToCart() {
-        return shoppingCartService.addToCart(1);
+    public String addToCart(@RequestParam("item") List<Integer> items) {
+        return shoppingCartService.addToCart(items);
     }
 }
